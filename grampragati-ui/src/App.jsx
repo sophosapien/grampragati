@@ -4,7 +4,7 @@ function App() {
   const [apiData, setApiData] = useState(null);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/data')
+    fetch('https://grampragati-backend.onrender.com/api/data')
       .then(response => response.json())
       .then(data => setApiData(data))
       .catch(error => console.error("Error fetching data:", error));
