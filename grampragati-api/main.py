@@ -1,16 +1,24 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Allow React frontend to access backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Vite dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to GramPragati API"}
 
-@app.get("/village/info")
-def get_village_info():
+@app.get("/api/data")
+def get_data():
     return {
-        "name": "Sample Gram Panchayat",
-        "state": "Maharashtra",
-        "population": 2345,
-        "watersources": ["Well", "Pond", "River"],
-        "agriculture": ["Wheat", "Rice", "Pulses"]
+        "status": "success",
+        "message": "Data fetched from FastAPI backend 🎉"
     }
