@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import VillagerDashboard from "./pages/VillagerDashboard";
-import VolunteerDashboard from "./pages/VolunteerDashboard";
+import Home from "./pages/home";
+import VillagerDashboard from "./pages/villagerdashboard";
+import VolunteerDashboard from "./pages/volunteerdashboard";
 
 function App() {
   return (
