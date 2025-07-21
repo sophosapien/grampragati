@@ -3,10 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow React frontend to access backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://grampragatiui.onrender.com/"],  # Vite dev server
+    allow_origins=["https://grampragatiui.onrender.com"],  # your frontend Render URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
